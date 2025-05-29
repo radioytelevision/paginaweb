@@ -32,6 +32,78 @@
       position: relative;
       overflow: hidden;
     }
+    .thank-you-box {
+  background: linear-gradient(135deg, #1a2e1a 0%, #2d4a2d 50%, #3a5c3a 100%);
+  border: 3px solid #000;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 80%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2s infinite alternate;
+}
+
+.thank-you-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.thank-you-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.signature {
+  color: #ddd;
+  font-style: italic;
+  margin-top: 15px;
+  font-size: 1rem;
+  animation: fadeIn 2s ease-in;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); }
+  100% { transform: scale(1.02); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efecto de partículas (opcional) */
+.thank-you-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 30px; }
+}
 
     header::before {
       content: "";
@@ -997,28 +1069,33 @@
         <div class="quiz-option" onclick="checkAnswer(this, false)">Oro</div>
         <div class="quiz-option" onclick="checkAnswer(this, false)">Plata</div>
       </div>
-
       <div class="quiz-question">
-        <h3>4. Memoria de Componentes LED (Encuentra las parejas)</h3>
-        <div class="memory-controls">
-          <button class="button small" onclick="startMemoryGame()">
-            <i class="fas fa-redo"></i> Reiniciar Juego
-          </button>
-          <div class="memory-stats">
-            <span id="memory-moves">Movimientos: 0</span>
-            <span id="memory-time">Tiempo: 0s</span>
-          </div>
-        </div>
-        <div class="memory-game">
-          <div class="memory-board" id="memory-board"></div>
-        </div>
-        <div class="memory-message" id="memory-message"></div>
-      </div>
-      
-      <button class="button accent" onclick="resetQuiz()">Reiniciar Quiz</button>
-    </section>
+  <h3>4. ¿Qué componente de un foco LED puede reutilizarse como disipador en otros proyectos?</h3>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">El vidrio protector</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">La base plástica</div>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">El disipador de calor de aluminio</div>
+</div>
 
-    
+<div class="quiz-question">
+  <h3>5. ¿Cuál es una forma creativa de reutilizar partes de focos LED en casa?</h3>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Usarlas como juguetes</div>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Crear lámparas decorativas caseras</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Tirarlas a la basura con cuidado</div>
+</div>
+
+<div class="quiz-question">
+  <h3>6. ¿Por qué es importante llevar los focos LED usados a un punto limpio?</h3>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Porque ocupan mucho espacio en casa</div>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Porque contienen materiales que contaminan si no se tratan correctamente</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Porque se ven feos</div>
+</div>
+
+    <div class="thank-you-box">
+  <div class="thank-you-content">
+    <span class="thank-you-text">¡Gracias por venir, escucharnos y leer esta información!</span>
+    <div class="signature">Diseñado por Esteche Facundo- Diseñador Web</div>
+  </div>
+</div>
 
     <footer>
       <h3>¡Únete al movimiento de reutilización!</h3>
@@ -1102,7 +1179,7 @@
           </h3>
           
           <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
-            <p><strong><i class="fas fa-user-tie icon"></i> Profesor:</strong> Simon, Jose Dither</p>
+            <p><strong><i class="fas fa-user-tie icon"></i> Profesor:</strong> Simon, Jose Diter</p>
             <p><strong><i class="fas fa-clock icon"></i> Duración:</strong> 2 años</p>
             <p><strong><i class="fas fa-calendar-alt icon"></i> Horarios:</strong> 
               <br>Lunes y Miércoles 18:30-21:00
